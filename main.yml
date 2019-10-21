@@ -1,0 +1,19 @@
+---
+- hosts: docker host
+  remote_user: jenkins
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Install pip
+      yum: name=python-pip state=present
+
+    - name: install docker-py package
+      pip: name=docker-py
+    
+    - name: Build Docker image from Dockerfile
+      docker_image:
+        name: web
+        path: docker
+        state: build
+
+    
