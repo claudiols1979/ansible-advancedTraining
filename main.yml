@@ -9,7 +9,7 @@
       pip: name=docker-py state=absent
 
     - name: install docker package
-      pip: name=docker state=absent
+      pip: name=docker state=present
     
     - name: Build Docker image from Dockerfile
       docker_image:
