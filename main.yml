@@ -1,5 +1,5 @@
 ---
-- hosts: docker host  
+- hosts: "docker host"
   become: yes  
   tasks:
     - name: Install pip
