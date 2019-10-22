@@ -5,7 +5,6 @@
   tasks:
     - name: update hosts file in /etc/hosts
       copy:
-        src: /files/hosts
+        src: hosts
         dest: /etc/hosts
 
-        
