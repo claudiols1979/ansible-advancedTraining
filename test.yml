@@ -1,0 +1,7 @@
+---
+- name: testing all ubuntu server
+  hosts: web_servers
+  tasks:
+    - name: ping all servers
+      ping:
+      
