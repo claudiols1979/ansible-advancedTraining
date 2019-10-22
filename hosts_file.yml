@@ -1,0 +1,11 @@
+---
+- name: testing all ubuntu server
+  hosts: app, db01, lb01
+  become: true
+  tasks:
+    - name: update hosts file in /etc/hosts
+      copy:
+        src: /files/hosts
+        dest: /etc/hosts
+
+        
