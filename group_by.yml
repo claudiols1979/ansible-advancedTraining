@@ -3,7 +3,8 @@
   hosts: all
   tasks: 
     - name: group host by app_type
-      group_by: key={{ ansible_lsb }}
+      group_by: 
+        key: {{ ansible_lsb }}
 
     - name: message by groups
       debug: msg="groups={{groups}}"
