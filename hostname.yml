@@ -2,3 +2,5 @@
 - hosts: all
   tasks:
     - command: hostname
+      register: hostname
+    - debug: msg={{ hostname.stdout_lines }}
