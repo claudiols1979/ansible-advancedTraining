@@ -23,12 +23,12 @@
     - name: install nginx
       apt: 
         name: nginx
-        state: absent
+        state: present
         update_cache: yes
       
 
-    # - name: ensure nginx started
-    #   service:
-    #     name: nginx
-    #     state: started
-    #     enabled: yes
+    - name: ensure nginx started
+      service:
+        name: nginx
+        state: started
+        enabled: yes
