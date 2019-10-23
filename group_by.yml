@@ -3,7 +3,7 @@
   hosts: all
   tasks: 
     - name: group host by app_type
-      group_by: key={{ app_key }}
+      group_by: key={{ app_type }}
 
     - name: message by groups
       debug: msg="groups={{groups}}"
