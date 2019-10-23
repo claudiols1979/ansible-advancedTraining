@@ -3,8 +3,8 @@
   hosts: all
   tasks: 
     - name: group host by app_type
-      group_by: 
-        key: {{ ansible_lsb }}
+      action: group_by key=${ansible_distribution}-${ansible_distribution_version}
+
 
     - name: message by groups
       debug: msg="groups={{groups}}"
