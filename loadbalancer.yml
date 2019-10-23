@@ -15,7 +15,7 @@
       register: apache_removed
 
     - name: msg apache absent
-      debug: msg={{ apache_removed }}
+      debug: msg={{ apache_removed.stdout_lines }}
 
     - name: install nginx
       apt: 
