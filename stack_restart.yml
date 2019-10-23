@@ -1,5 +1,5 @@
 ---
-# Bring stack down
+# Bring stack down |  always start bringing down from loadbalancer front end
 - hosts: lb01
   become: true
   tasks:
@@ -14,6 +14,7 @@
         name: apache2
         state: stopped
         
+# database is restarted and not stopped because since we are starting up services we need database to bootstrap the app once is back
 - hosts: db01
   become: true
   tasks:
@@ -27,7 +28,7 @@
     - service: 
         name: apache2
         state: started
-        
+
 - hosts: lb01
   become: true
   tasks:
