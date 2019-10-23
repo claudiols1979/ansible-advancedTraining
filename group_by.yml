@@ -1,0 +1,14 @@
+---
+- name: group by 
+  hosts: all
+  tasks: 
+    - name: group host by app_type
+      group_by: key={{ app_key }}
+
+    - name: message by groups
+      debug: msg="groups={{groups}}"
+      run_once: true
+
+    - name: message play_hosts 
+      debug: msg="play_hosts={{ play_hosts }}"
+      run_once: true
