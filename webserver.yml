@@ -4,13 +4,13 @@
   tasks:
     - name: install apache2
       apt: 
-        name: {{ item }}
+        name: {{ packages }}
         state: present
         update_cache: yes
-      loop:
-        - apache2
-        - libapache2-mod-wsgi
-        - python-pip
-        - python-virtualenv
+      vars:
+        packages:
+          - apache2
+          - libapache2-mod-wsgi
+          - python-pip
+          - python-virtualenv
 
-        
