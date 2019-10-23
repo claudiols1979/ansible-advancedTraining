@@ -2,8 +2,12 @@
 - name: group by 
   hosts: all
   tasks: 
-    - name: group host by app_type
+    - name: group host by version and distro
       action: group_by key=${ansible_distribution}-${ansible_distribution_version}
+
+    - name: message by groups
+      debug: msg="groups={{groups}}"
+      run_once: true
 
     - name: Create a group of all hosts by operating system
       action: group_by key=${codename.stdout}
@@ -12,3 +16,5 @@
     - name: message by groups
       debug: msg="groups={{groups}}"
       run_once: true
+
+    
