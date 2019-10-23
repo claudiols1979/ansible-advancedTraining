@@ -13,12 +13,7 @@
         name: apache2
         state: absent
       register: apache_removed   
-
-    - name: restart apache2 service
-      service:
-        name: apache2
-        state: restarted
-      when: apache_removed.changed
+   
 
     - name: install nginx
       apt: 
