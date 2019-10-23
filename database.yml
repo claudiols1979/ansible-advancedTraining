@@ -1,11 +1,12 @@
 ---
 - hosts: db01
+  become: true
   tasks:
     - name: install mysql-server
       apt:
         name: mysql-server
         state: present
         update_cache: yes
-        
+
 
   
