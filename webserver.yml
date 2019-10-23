@@ -2,6 +2,11 @@
 - hosts: app
   become: true
   tasks:
+    - name: PHP | Install Ondrej PHP PPA
+      apt_repository: 
+        repo: 'ppa:ondrej/php' 
+        update_cache: yes
+        
     - name: install web components
       apt: 
         name: "{{ packages }}"
@@ -13,6 +18,7 @@
           - libapache2-mod-wsgi
           - python-pip
           - python-virtualenv
+          - php7.2
 
     - name: ensure apache2 started
       service: 
