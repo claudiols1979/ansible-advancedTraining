@@ -1,6 +1,6 @@
 ---
 - name: testing all ubuntu server
-  hosts: app:db01:lb01
+  hosts: app, db01, lb01
   tasks:
     - name: ping all servers
       ping:
