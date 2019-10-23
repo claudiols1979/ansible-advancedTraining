@@ -2,8 +2,27 @@
 - hosts: lb01
   become: true
   tasks: 
+    - name: ensure apache2 is stop
+      service:
+        name: apache2
+        state: stopped
+        enabled: no
+
+    - name: ensure apache2 is removed
+      apt:
+        name: apache2
+        state: absent
+      register: apache_removed
+
     - name: install nginx
       apt: 
         name: nginx
         state: present
         update_cache: yes
+      
+
+    - name: ensure nginx started
+      service:
+        name: nginx
+        state: started
+        enabled: yes
