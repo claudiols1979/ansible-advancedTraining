@@ -5,6 +5,9 @@
     - name: group host by app_type
       action: group_by key=${ansible_distribution}-${ansible_distribution_version}
 
+    - name: Create a group of all hosts by operating system
+      action: group_by key=${codename.stdout}
+
 
     - name: message by groups
       debug: msg="groups={{groups}}"
