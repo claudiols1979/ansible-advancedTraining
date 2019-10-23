@@ -12,10 +12,7 @@
       apt:
         name: apache2
         state: absent
-      register: apache_removed
-
-    - name: msg apache absent
-      debug: msg={{ apache_removed.stdout_lines }}
+      register: apache_removed   
 
     - name: install nginx
       apt: 
