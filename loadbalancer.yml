@@ -1,7 +1,7 @@
 ---
 - hosts: lb01
   become: true
-  tasks: 
+  tasks:
     - name: ensure apache2 is stop
       service:
         name: apache2
@@ -12,15 +12,13 @@
       apt:
         name: apache2
         state: absent
-      register: apache_removed   
-   
+      register: apache_removed
 
     - name: install nginx
-      apt: 
+      apt:
         name: nginx
         state: present
         update_cache: yes
-      
 
     - name: ensure nginx started
       service:
@@ -31,18 +29,18 @@
     - name: configure nginx site
       template:
         src: templates/nginx.conf.j2
-        dest: /etc/nginx/sites-available/demo 
-        mode: '644'
+        dest: /etc/nginx/sites-available/demo
+        mode: "644"
       notify: restart nginx
 
     - name: de-activate default nginx site
-      file: 
-        path: /etc/nginx/sites-enabled/default 
+      file:
+        path: /etc/nginx/sites-enabled/default
         state: absent
       notify: restart nginx
 
-    - name: activate demo site 
-      file: 
+    - name: activate demo site
+      file:
         src: /etc/nginx/sites-available/demo
         dest: /etc/nginx/sites-enabled/demo
         state: link
