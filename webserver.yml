@@ -46,6 +46,11 @@
         mode: '755'
       notify: restart apache2
 
+    - name: setup python virualenv 
+      pip: requirements=/var/wwww/demo/requirements.txt virtualenv=/var/www/demo/.venv
+      notify: restart apache2 
+
+
   handlers:
     - name: restart apache2
       service: 
