@@ -31,6 +31,7 @@
       mysql_db:
         name: demo
         state: present
+      notify: restart mysql
 
     - name: create demo user
       mysql_user:
@@ -39,6 +40,8 @@
         priv: demo.*:ALL
         host: '%'
         state: present
+        login_port: 3306
+      notify: restart mysql
 
   handlers:
     - name: restart mysql
