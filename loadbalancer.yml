@@ -2,6 +2,15 @@
 - hosts: lb01
   become: true
   tasks:
+    - name: install tools
+      apt:
+       name: "{{ packages }}"
+       state: present
+       update_cache: yes
+      vars:
+        packages:
+          - python-httplib2
+          
     - name: ensure apache2 is stop
       service:
         name: apache2
