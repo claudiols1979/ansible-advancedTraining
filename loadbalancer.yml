@@ -26,12 +26,12 @@
         state: started
         enabled: yes
 
-  #   - name: configure nginx site
-  #     template:
-  #       src: templates/nginx.conf.j2
-  #       dest: /etc/nginx/sites-available/demo
-  #       mode: "644"
-  #     notify: restart nginx
+    - name: configure nginx site
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/sites-available/demo
+        mode: "644"
+      notify: restart nginx
 
   #   - name: de-activate default nginx site
   #     file:
