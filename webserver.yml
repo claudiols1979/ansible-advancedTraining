@@ -46,6 +46,10 @@
         mode: '755'
       notify: restart apache2
 
+    - name: install requirements out of virtualenv
+      pip:
+        requirements: /var/www/demo/requirements.txt
+
     - name: setup python virualenv
       become: true 
       pip: 
