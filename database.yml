@@ -14,6 +14,18 @@
         state: started
         enabled: yes
 
+    - name: ensure mysql listening on all ports
+      lineinfile: dest=/etc/mysql/mysql.conf.d/mysqld.cnf regexp=^bind-address line="bind-address = 0.0.0.0"
+      notify: restart mysql
+
+  handlers:
+    - name: restart mysql
+      service:
+        name: mysqld
+        state: restarted
+      
+
+
 
 
   
