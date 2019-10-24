@@ -39,7 +39,7 @@
         state: started
     - wait_for:
         port: 80
-        state: started
+        
 
 - hosts: lb01
   become: true
@@ -49,5 +49,5 @@
         state: started
     - wait_for:
         port: 80
-        state: started
+        
 
