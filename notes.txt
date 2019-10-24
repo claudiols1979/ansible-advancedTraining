@@ -1,0 +1,23 @@
+upstream demo {
+{% for server in groups.app %}
+    server {{ server }};
+{% endfor %}
+}
+
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://demo;
+    }
+}
+
+upstream demo is just the name of the configuration block for nginx. 
+this file is treated as any conf file for sites-avaiable therefor is linked to sites-enabled to serve data.
+
+The jinja2 logic is refering to Ansible groups in inventory (app) which refers to the 2 hosts we have in the inventory
+host1 = 192.168.0.193 
+host2 = 192.168.0.194
+
+jinja2 is a for loop, it will iterate over the 2 servers to serve data from both depending on workload and avaibility.
+
