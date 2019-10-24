@@ -2,6 +2,15 @@
 - hosts: db01
   become: true
   tasks:
+    - name: install tools
+      apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+          - python-mysqldb
+
     - name: install mysql-server
       apt:
         name: mysql-server
@@ -17,6 +26,19 @@
     - name: ensure mysql listening on all ports
       lineinfile: dest=/etc/mysql/mysql.conf.d/mysqld.cnf regexp=^bind-address line="bind-address = 0.0.0.0"
       notify: restart mysql
+
+    - name: create demo database
+      mysql_db:
+        name: demo
+        state: present
+
+    - name: create demo user
+      mysql_user:
+        name: demo
+        password: demo
+        priv: demo.*:ALL
+        host: '%'
+        state: present
 
   handlers:
     - name: restart mysql
