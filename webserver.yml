@@ -46,8 +46,11 @@
         mode: '755'
       notify: restart apache2
 
-    - name: setup python virualenv 
-      pip: requirements=/var/www/demo/requirements.txt virtualenv=/var/www/demo/.venv
+    - name: setup python virualenv
+      become: true 
+      pip: 
+        requirements: /var/www/demo/requirements.txt
+        virtualenv: /var/www/demo/.venv
       notify: restart apache2
 
     - name: de-activate default apache site
