@@ -19,6 +19,7 @@
           - python-pip
           - python-virtualenv
           - php7.2
+          - python-mysqldb
 
     - name: ensure apache2 started
       service: 
