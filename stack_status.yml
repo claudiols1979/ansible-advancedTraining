@@ -70,3 +70,14 @@
       when: "'Hello, from sunny' not in item.content"
       with_items: "{{app_index.results}}"
 
+# check database backend resopnse 
+    - name: verify backend db response
+      uri: url=http://{{item}}/db return_content=yes
+      with_items: 
+        - "{{ groups.app }}"
+       
+      register: app_db
+
+    - fail: msg="db failed to return content"
+      when: "'Database Connected from' not in item.content"
+      with_items: "{{app_db.results}}"
