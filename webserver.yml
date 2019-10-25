@@ -20,6 +20,8 @@
           - python-virtualenv
           - php7.2
           - python-mysqldb
+          - python-httplib2
+          - curl 
 
     - name: ensure apache2 started
       service: 
