@@ -29,6 +29,7 @@
 
     - name: verify mysql is listening on 80
       wait_for:
+        host: "{{ ansible_default_ipv4.address }}"
         port: 3306
         timeout: 1
 
