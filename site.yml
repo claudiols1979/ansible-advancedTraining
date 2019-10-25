@@ -1,0 +1,9 @@
+---
+- include: control.yml
+- include: database.yml
+- include: webserver.yml
+- include: loadbalancer.yml
+- include: stack_restart.yml
+- include: stack_status.yml
+
+
