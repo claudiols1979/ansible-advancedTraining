@@ -27,6 +27,12 @@
     mode: '755'
   notify: restart apache2
 
+- name: copy demo.wsgi
+  template:
+    src: demo.wsgi.j2
+    dest: /var/www/demo/demo.wsgi
+    mode: '755'
+    
 - name: copy apache virtual host config
   copy:
     src: demo/demo.conf
