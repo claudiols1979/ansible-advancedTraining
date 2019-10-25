@@ -39,14 +39,14 @@
       uri:
         url: http://"{{ item }}" 
         return_content: yes
-      loop:
+      with_items:
         - groups.lb01
       register: lb_index
 
     - fail:
         msg: "index failed to return content"
       when: "'Hello, from sunny' not in item.content"
-      loop:
+      with_items:
         - "{{ lb_index.results }}"
  
 
