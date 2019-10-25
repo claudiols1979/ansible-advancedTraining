@@ -35,7 +35,7 @@
     src: nginx.conf.j2
     dest: /etc/nginx/sites-available/"{{ item.key }}"
     mode: "644"
-  with_dict: sites
+  with_dict: "{{ sites }}"
   notify: restart nginx
 
 - name: de-activate default nginx site
@@ -49,7 +49,7 @@
     src: /etc/nginx/sites-available/"{{ item.key }}"
     dest: /etc/nginx/sites-enabled/"{{ item.key }}"
     state: link
-  with_dict: sites
+  with_dict: "{{ sites }}"
   notify: restart nginx
 
 - name: ensure nginx started
