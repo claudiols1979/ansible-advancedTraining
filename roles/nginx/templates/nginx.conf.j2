@@ -2,7 +2,7 @@ upstream {{ item.key }} {
 {% for server in groups.app %}
     server {{ server }}:{{ item.value.backend }}
 {% endfor %}
-}
+
 
 server {
     listen {{ item.value.frontend }}
@@ -10,4 +10,4 @@ server {
     location / {
         proxy_pass http://{{ item.key }}
     }
-}
+
