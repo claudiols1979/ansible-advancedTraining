@@ -1,2 +1,53 @@
 ---
-# tasks file for demo_app
+- name: PHP | Install Ondrej PHP PPA
+  apt_repository: 
+    repo: 'ppa:ondrej/php' 
+    update_cache: yes
+        
+- name: install web components
+  apt: 
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - apache2
+      - libapache2-mod-wsgi
+      - python-pip
+      - python-virtualenv
+      - php7.2
+      - python-mysqldb
+      - python-httplib2
+      - curl 
+  
+- name: copy demo app source
+  copy:
+    src: demo/app/
+    dest: /var/www/demo 
+    mode: '755'
+  notify: restart apache2
+
+- name: copy apache virtual host config
+  copy:
+    src: demo/demo.conf
+    dest: /etc/apache2/sites-available
+    mode: '755'
+  notify: restart apache2
+
+- name: install requirements out of virtualenv
+  pip:
+    requirements: /var/www/demo/requirements.txt
+
+- name: setup python virualenv
+  become: true 
+  pip: 
+    requirements: /var/www/demo/requirements.txt
+    virtualenv: /var/www/demo/.venv
+  notify: restart apache2   
+
+- name: activate demo apache site
+  file: 
+    src: /etc/apache2/sites-available/demo.conf
+    dest: /etc/apache2/sites-enabled/demo.conf
+    state: link
+  notify: restart apache2
