@@ -32,38 +32,3 @@
         port: 3306
         timeout: 1
 
-- hosts: 192.168.0.194
-  become: true
-  tasks:
-    - name: verify end-to-end response
-      uri:
-        url: http://"{{ item }}" 
-        return_content: yes
-      with_items:
-        - "{{ groups.lb01 }}"
-      register: lb_index
-
-    - fail:
-        msg: "index failed to return content"
-      when: "'Hello, from sunny' not in item.content"
-      with_items:
-        - "{{ lb_index.results }}"
- 
-
-- hosts: lb01 
-  become: true
-  tasks:
-    - name: verify backend response
-      uri:
-        url: http://"{{ item }}" 
-        return_content: yes
-      loop:
-        - "{{ groups.app }}"
-      register: app_index
-
-    - fail:
-        msg: "index failed to return content"
-      when: "'Hello, from sunny {{ item.item }}' not in item.content"
-      loop:
-        - "{{ app_index.results }}"
-        
