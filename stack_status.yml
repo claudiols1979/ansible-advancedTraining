@@ -32,3 +32,14 @@
         port: 3306
         timeout: 1
 
+- hosts: localhost
+  become: true
+  tasks:
+    - name: verify end-to-end response
+      uri: url=http://{{item}} return_content=yes
+      with_items: groups.lb01
+      register: lb_index
+
+    - fail: msg="index failed to return content"
+      when: "'Hello, from sunny' not in item.content"
+      with_items: "{{lb_index.results}}"
