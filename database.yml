@@ -2,7 +2,7 @@
 - hosts: db01
   become: true
   roles:
-    - mysql
+    - { role: mysql, db_name: demo, db_username: demo, db_user_password: demo, db_user_host: '%' }
  
     
       
