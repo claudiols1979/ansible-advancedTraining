@@ -29,6 +29,7 @@
     name: nginx
     state: present
     update_cache: yes
+  when: "{{ apache_removed.changed }}"
 
 - name: configure nginx site
   template:
