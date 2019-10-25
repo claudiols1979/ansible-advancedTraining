@@ -40,7 +40,7 @@
         url: http://"{{ item }}" 
         return_content: yes
       with_items:
-        - groups.lb01
+        - "{{ groups.lb01 }}"
       register: lb_index
 
     - fail:
@@ -58,7 +58,7 @@
         url: http://"{{ item }}" 
         return_content: yes
       loop:
-        - groups.app
+        - "{{ groups.app }}"
       register: app_index
 
     - fail:
