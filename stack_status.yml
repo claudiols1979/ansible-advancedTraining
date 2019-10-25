@@ -44,6 +44,17 @@
     - fail: msg="index failed to return content"
       when: "'Hello, from sunny' not in item.content"
       with_items: "{{lb_index.results}}"
+  
+# some checks for the database as well 
+    - name: verify end-to-end db response
+      uri: url=http://{{item}}/db return_content=yes
+      with_items: 
+        - 192.168.0.192
+      register: lb_db
+
+    - fail: msg="db failed to return content"
+      when: "'Database Connected from' not in item.content"
+      with_items: "{{lb_db.results}}"
 
 - hosts: lb01
   become: true
@@ -58,3 +69,4 @@
     - fail: msg="index failed to return content"
       when: "'Hello, from sunny' not in item.content"
       with_items: "{{app_index.results}}"
+
