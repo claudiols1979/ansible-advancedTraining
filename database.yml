@@ -3,10 +3,7 @@
   become: true
   roles:
     - role: mysql
-      db_username: "{{ db_username }}"
-      db_user_password: "{{ db_user_password }}"
-      db_user_host: "{{ db_user_host }}"
- 
+      
     
       
 
