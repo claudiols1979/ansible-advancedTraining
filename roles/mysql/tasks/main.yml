@@ -9,7 +9,8 @@
     packages:
       - python-mysqldb
       - python-httplib2
-      - curl 
+      - curl
+  tags: [ 'packages' ]
 
 - name: install mysql-server
   apt:

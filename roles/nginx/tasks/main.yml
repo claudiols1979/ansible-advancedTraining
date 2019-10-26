@@ -6,6 +6,7 @@
   vars:
     packages:
       - python-httplib2
+  tags: [ 'packages' ]
 
 - name: ensure apache2 is stop
   service:

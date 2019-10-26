@@ -1,7 +1,8 @@
 ---
 - name: PHP | Install Ondrej PHP PPA
   apt_repository: 
-    repo: 'ppa:ondrej/php'    
+    repo: 'ppa:ondrej/php'
+  tags: [ 'packages' ]    
         
 - name: install web components
   apt: 
@@ -16,7 +17,8 @@
       - php7.2
       - python-mysqldb
       - python-httplib2
-      - curl 
+      - curl
+  tags: [ 'packages' ]
 
 - name: ensure mod_wsgi installed
   apache2_module: 
