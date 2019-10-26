@@ -1,5 +1,5 @@
 ---
 db_name: demo
 db_username: demo
-db_user_password: demo
+db_user_password: "{{ vault_db_password }}"
 db_user_host: '%'
