@@ -30,10 +30,46 @@
   file:
     path: /etc/apache2/sites-enabled/000-default.conf
     state: absent
-  notify: restart apache2
+  notify: restart upstream {{ item.key }} {
+{% for server in groups.app %}
+    server {{ server }}:{{ item.value.backend }};
+{% endfor %}
+}
 
-- name: ensure apache2 started
+server {
+    listen {{ item.value.frontend }};
+
+    location / {
+        proxy_pass http://{{ item.key }};
+    }
+}
+
+- name: ensure apaupstream {{ item.key }} {
+{% for server in groups.app %}
+    server {{ server }}:{{ item.value.backend }};
+{% endfor %}
+}
+
+server {
+    listen {{ item.value.frontend }};
+
+    location / {
+        proxy_pass http://{{ item.key }};
+    }
+}
   service: 
     name: apache2
-    state: started
+    state: startedupstream {{ item.key }} {
+{% for server in groups.app %}
+    server {{ server }}:{{ item.value.backend }};
+{% endfor %}
+}
+
+server {
+    listen {{ item.value.frontend }};
+
+    location / {
+        proxy_pass http://{{ item.key }};
+    }
+}
     enabled: yes

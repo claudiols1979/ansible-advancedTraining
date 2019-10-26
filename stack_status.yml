@@ -1,6 +1,7 @@
 ---
 - hosts: lb01
   become: true
+  gather_facts: false
   tasks:
     - name: verify nginx service
       command: systemctl status nginx
@@ -12,6 +13,7 @@
 
 - hosts: app
   become: true
+  gather_facts: false
   tasks:
     - name: verify apache2 service
       command: systemctl status apache2
@@ -35,6 +37,7 @@
 
 - hosts: localhost
   become: true
+  gather_facts: false
   tasks:
     - name: verify end-to-end response
       uri: url=http://{{item}} return_content=yes
@@ -59,6 +62,7 @@
 
 - hosts: lb01
   become: true
+  gather_facts: false
   tasks:
     - name: verify backend response
       uri: url=http://{{item}} return_content=yes
