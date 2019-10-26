@@ -2,8 +2,7 @@
 - name: install tools
   apt:
     name: "{{ packages }}"
-    state: present
-    update_cache: yes
+    state: present    
   vars:
     packages:
       - python-httplib2
@@ -27,8 +26,7 @@
 - name: install nginx
   apt:
     name: nginx
-    state: present
-    update_cache: yes  
+    state: present      
 
 - name: configure nginx sites
   template:
