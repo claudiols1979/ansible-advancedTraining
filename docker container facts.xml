@@ -1,0 +1,399 @@
+{
+    "deprecations": [
+        {
+            "msg": "Distribution Ubuntu 18.04 on host 1e85219bd491 should use /usr/bin/python3, but is using /usr/bin/python for backward compatibility with prior Ansible releases. A future Ansible release will default to using the discovered platform python for this host. See https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html for more information",
+            "version": "2.12"
+        }
+    ],
+    "_ansible_no_log": false,
+    "changed": false,
+    "_ansible_verbose_override": true,
+    "invocation": {
+        "module_args": {
+            "filter": "*",
+            "gather_subset": [
+                "all"
+            ],
+            "fact_path": "/etc/ansible/facts.d",
+            "gather_timeout": 10
+        }
+    },
+    "ansible_facts": {
+        "ansible_processor_count": 1,
+        "ansible_product_version": "1.2",
+        "ansible_service_mgr": "sshd",
+        "ansible_fibre_channel_wwn": [],
+        "ansible_user_dir": "/root",
+        "ansible_memtotal_mb": 11844,
+        "gather_subset": [
+            "all"
+        ],
+        "ansible_distribution_version": "18.04",
+        "ansible_real_user_id": 0,
+        "ansible_virtualization_role": "guest",
+        "ansible_distribution_file_variety": "Debian",
+        "ansible_dns": {
+            "nameservers": [
+                "127.0.0.11"
+            ],
+            "search": [
+                "local"
+            ],
+            "options": {
+                "ndots": "0"
+            }
+        },
+        "ansible_effective_group_id": 0,
+        "ansible_userspace_bits": "64",
+        "ansible_architecture": "x86_64",
+        "ansible_device_links": {
+            "masters": {
+                "sda2": [
+                    "dm-0",
+                    "dm-1",
+                    "dm-2"
+                ]
+            },
+            "labels": {},
+            "ids": {},
+            "uuids": {}
+        },
+        "ansible_swapfree_mb": 8103,
+        "ansible_apparmor": {
+            "status": "disabled"
+        },
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "(hd0,msdos1)/vmlinuz-4.18.0-80.11.2.el8_0.x86_64",
+            "resume": "/dev/mapper/cl-swap",
+            "quiet": true,
+            "rhgb": true,
+            "rd.lvm.lv": "cl/swap",
+            "crashkernel": "auto",
+            "ro": true,
+            "root": "/dev/mapper/cl-root"
+        },
+        "ansible_selinux": {
+            "status": "Missing selinux Python library"
+        },
+        "ansible_userspace_architecture": "x86_64",
+        "ansible_proc_cmdline": {
+            "BOOT_IMAGE": "(hd0,msdos1)/vmlinuz-4.18.0-80.11.2.el8_0.x86_64",
+            "resume": "/dev/mapper/cl-swap",
+            "quiet": true,
+            "rhgb": true,
+            "rd.lvm.lv": [
+                "cl/root",
+                "cl/swap"
+            ],
+            "crashkernel": "auto",
+            "ro": true,
+            "root": "/dev/mapper/cl-root"
+        },
+        "ansible_product_uuid": "6e766251-a6a3-4289-b0da-1efed23fba4c",
+        "ansible_pkg_mgr": "apt",
+        "ansible_memfree_mb": 6784,
+        "ansible_memory_mb": {
+            "real": {
+                "total": 11844,
+                "free": 6784,
+                "used": 5060
+            },
+            "swap": {
+                "cached": 0,
+                "total": 8103,
+                "used": 0,
+                "free": 8103
+            },
+            "nocache": {
+                "used": 3358,
+                "free": 8486
+            }
+        },
+        "ansible_distribution": "Ubuntu",
+        "module_setup": true,
+        "ansible_iscsi_iqn": "",
+        "ansible_hostname": "1e85219bd491",
+        "ansible_uptime_seconds": 9344,
+        "ansible_machine_id": "c6aaf39f25b7426e9eb06cc67c6512d8",
+        "ansible_kernel": "4.18.0-80.11.2.el8_0.x86_64",
+        "ansible_python": {
+            "executable": "/usr/bin/python",
+            "version": {
+                "micro": 15,
+                "major": 2,
+                "releaselevel": "final",
+                "serial": 0,
+                "minor": 7
+            },
+            "type": "CPython",
+            "has_sslcontext": true,
+            "version_info": [
+                2,
+                7,
+                15,
+                "final",
+                0
+            ]
+        },
+        "ansible_fqdn": "1e85219bd491",
+        "ansible_mounts": [
+            {
+                "block_used": 2296743,
+                "uuid": "N/A",
+                "size_total": 53660876800,
+                "block_total": 13100800,
+                "mount": "/etc/hosts",
+                "block_available": 10804057,
+                "size_available": 44253417472,
+                "fstype": "xfs",
+                "inode_total": 26214400,
+                "inode_available": 25944992,
+                "device": "/dev/mapper/cl-root",
+                "inode_used": 269408,
+                "block_size": 4096,
+                "options": "rw,seclabel,relatime,attr2,inode64,noquota,bind"
+            },
+            {
+                "block_used": 2296743,
+                "uuid": "N/A",
+                "size_total": 53660876800,
+                "block_total": 13100800,
+                "mount": "/etc/hostname",
+                "block_available": 10804057,
+                "size_available": 44253417472,
+                "fstype": "xfs",
+                "inode_total": 26214400,
+                "inode_available": 25944992,
+                "device": "/dev/mapper/cl-root",
+                "inode_used": 269408,
+                "block_size": 4096,
+                "options": "rw,seclabel,relatime,attr2,inode64,noquota,bind"
+            },
+            {
+                "block_used": 2296743,
+                "uuid": "N/A",
+                "size_total": 53660876800,
+                "block_total": 13100800,
+                "mount": "/etc/resolv.conf",
+                "block_available": 10804057,
+                "size_available": 44253417472,
+                "fstype": "xfs",
+                "inode_total": 26214400,
+                "inode_available": 25944992,
+                "device": "/dev/mapper/cl-root",
+                "inode_used": 269408,
+                "block_size": 4096,
+                "options": "rw,seclabel,relatime,attr2,inode64,noquota,bind"
+            }
+        ],
+        "ansible_user_shell": "/bin/bash",
+        "ansible_nodename": "1e85219bd491",
+        "ansible_product_serial": "0",
+        "ansible_form_factor": "Other",
+        "ansible_distribution_file_parsed": true,
+        "ansible_fips": false,
+        "ansible_user_id": "root",
+        "ansible_selinux_python_present": false,
+        "ansible_local": {},
+        "ansible_hostnqn": "",
+        "ansible_domain": "",
+        "ansible_distribution_file_path": "/etc/os-release",
+        "discovered_interpreter_python": "/usr/bin/python",
+        "ansible_virtualization_type": "docker",
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIAzyZijUF+RuLNsD2UZ00+TqYCXRcjrEQqp90qj4ytTD",
+        "ansible_processor_cores": 4,
+        "ansible_processor_vcpus": 4,
+        "ansible_bios_version": "VirtualBox",
+        "ansible_processor": [
+            "0",
+            "GenuineIntel",
+            "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz",
+            "1",
+            "GenuineIntel",
+            "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz",
+            "2",
+            "GenuineIntel",
+            "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz",
+            "3",
+            "GenuineIntel",
+            "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz"
+        ],
+        "ansible_date_time": {
+            "weeknumber": "43",
+            "month": "11",
+            "iso8601_basic": "20191102T174609758023",
+            "iso8601_micro": "2019-11-02T17:46:09.758089Z",
+            "year": "2019",
+            "date": "2019-11-02",
+            "iso8601": "2019-11-02T17:46:09Z",
+            "day": "02",
+            "minute": "46",
+            "second": "09",
+            "weekday_number": "6",
+            "iso8601_basic_short": "20191102T174609",
+            "tz": "UTC",
+            "hour": "17",
+            "tz_offset": "+0000",
+            "epoch": "1572716769",
+            "weekday": "Saturday",
+            "time": "17:46:09"
+        },
+        "ansible_is_chroot": false,
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAo5In8K+OeUftSdn5tdjfa48jGiQNPOCWy2DrtloJTOg6TkNIoxYljAyGdsAMhEkWsQoq41i+YGYLjMOBLFsPk=",
+        "ansible_distribution_release": "bionic",
+        "ansible_system_vendor": "innotek GmbH",
+        "ansible_os_family": "Debian",
+        "ansible_effective_user_id": 0,
+        "ansible_user_gid": 0,
+        "ansible_swaptotal_mb": 8103,
+        "ansible_product_name": "VirtualBox",
+        "ansible_devices": {
+            "dm-2": {
+                "sectorsize": "512",
+                "vendor": null,
+                "links": {
+                    "masters": [],
+                    "labels": [],
+                    "ids": [],
+                    "uuids": []
+                },
+                "sas_device_handle": null,
+                "host": "",
+                "support_discard": "0",
+                "holders": [],
+                "partitions": {},
+                "scheduler_mode": "",
+                "rotational": "1",
+                "sectors": "191012864",
+                "sas_address": null,
+                "virtual": 1,
+                "removable": "0",
+                "model": null,
+                "size": "91.08 GB"
+            },
+            "sda": {
+                "sectorsize": "512",
+                "vendor": "ATA",
+                "links": {
+                    "masters": [],
+                    "labels": [],
+                    "ids": [],
+                    "uuids": []
+                },
+                "sas_device_handle": null,
+                "host": "",
+                "support_discard": "0",
+                "holders": [],
+                "partitions": {
+                    "sda2": {
+                        "start": "2099200",
+                        "sectorsize": 512,
+                        "uuid": null,
+                        "links": {
+                            "masters": [
+                                "dm-0",
+                                "dm-1",
+                                "dm-2"
+                            ],
+                            "labels": [],
+                            "ids": [],
+                            "uuids": []
+                        },
+                        "sectors": "312473600",
+                        "holders": [
+                            "cl-swap",
+                            "cl-home",
+                            "cl-root"
+                        ],
+                        "size": "149.00 GB"
+                    },
+                    "sda1": {
+                        "start": "2048",
+                        "sectorsize": 512,
+                        "uuid": null,
+                        "links": {
+                            "masters": [],
+                            "labels": [],
+                            "ids": [],
+                            "uuids": []
+                        },
+                        "sectors": "2097152",
+                        "holders": [],
+                        "size": "1.00 GB"
+                    }
+                },
+                "scheduler_mode": "mq-deadline",
+                "rotational": "1",
+                "sectors": "314572800",
+                "sas_address": null,
+                "virtual": 1,
+                "removable": "0",
+                "model": "VBOX HARDDISK",
+                "size": "150.00 GB"
+            },
+            "dm-0": {
+                "sectorsize": "512",
+                "vendor": null,
+                "links": {
+                    "masters": [],
+                    "labels": [],
+                    "ids": [],
+                    "uuids": []
+                },
+                "sas_device_handle": null,
+                "host": "",
+                "support_discard": "0",
+                "holders": [],
+                "partitions": {},
+                "scheduler_mode": "",
+                "rotational": "1",
+                "sectors": "104857600",
+                "sas_address": null,
+                "virtual": 1,
+                "removable": "0",
+                "model": null,
+                "size": "50.00 GB"
+            },
+            "dm-1": {
+                "sectorsize": "512",
+                "vendor": null,
+                "links": {
+                    "masters": [],
+                    "labels": [],
+                    "ids": [],
+                    "uuids": []
+                },
+                "sas_device_handle": null,
+                "host": "",
+                "support_discard": "0",
+                "holders": [],
+                "partitions": {},
+                "scheduler_mode": "",
+                "rotational": "1",
+                "sectors": "16596992",
+                "sas_address": null,
+                "virtual": 1,
+                "removable": "0",
+                "model": null,
+                "size": "7.91 GB"
+            }
+        },
+        "ansible_user_uid": 0,
+        "ansible_distribution_major_version": "18",
+        "ansible_real_group_id": 0,
+        "ansible_lsb": {
+            "release": "18.04",
+            "major_release": "18",
+            "codename": "bionic",
+            "id": "Ubuntu",
+            "description": "Ubuntu 18.04 LTS"
+        },
+        "ansible_bios_date": "12/01/2006",
+        "ansible_machine": "x86_64",
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDHzuBlaowlnYScm3PJx0JVTM9guCg92aRcT7OTb1BeWURpiUfKuQBqfcRelEThUD/xGw1INCMpU72DHJdDlkITquvaoxpsvbhbJ4z+TLFGutCKkrafUa+qnJet/9Asu8fePyZdrNgXFksnD8BfurJE6r69U1QzzYqfjgW6kV3biY8kkPeuVV2PxK/GLJSbUmWhGyrA21acvcuOK8Bse/DyAOp+8W+Op8KJ8KXmPj/IrFu9QfhU1waWySRH9ULvDiHg3GUroN8ZGxvGGRJtydCpjT2Z67bBeX/bMGGAKEIWqaLP3IWalUgjWKq/WVp7byF1VpnIwKCmmoBu2lQg8mLd",
+        "ansible_user_gecos": "root",
+        "ansible_processor_threads_per_core": 1,
+        "ansible_system": "Linux",
+        "ansible_python_version": "2.7.15+"
+    }
+}
