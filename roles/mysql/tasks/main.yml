@@ -22,7 +22,7 @@
   lineinfile: 
     dest: /etc/mysql/mysql.conf.d/mysqld.cnf 
     regexp: ^bind-address 
-    line: "bind-address = {{ ansible_default_ipv4.address }}"
+    line: "bind-address = {{ db01_ipv4_address }}"
   notify: restart mysql
 
 - name: ensure mysql started
