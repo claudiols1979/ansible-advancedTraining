@@ -2,7 +2,7 @@
 - hosts: db01
   become: true
   include_vars:
-    ansible_default_ipv4.address: ansible_default_ipv4.address
+    dir: vars/main.yml
   roles:
     - role: mysql
       
