@@ -1,3 +1,3 @@
 ---
 # vars file for mysql
-ansible_default_ipv4.address: 172.18.0.7
+ansible_default_ipv4.address: 172.18.0.10
