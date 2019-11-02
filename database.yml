@@ -1,8 +1,6 @@
 ---
 - hosts: db01
   become: true
-  include_vars:
-    dir: vars/main.yml
   roles:
     - role: mysql
       
